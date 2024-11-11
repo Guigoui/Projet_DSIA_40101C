@@ -1,5 +1,6 @@
 library(shiny)
 
+
 # Interface utilisateur
 ui <- fluidPage(
   
@@ -19,27 +20,38 @@ ui <- fluidPage(
     # Onglet Carte de France
     tabPanel("Carte de France",
              div(style = "text-align: center;", 
-                 h3("Effectifs de Police par Département"),
-                 plotOutput("police_map"),
-                 # les sliders ne veulent pas se mettre au milieu je ne comprends pas pk
+                 h3("Effectifs de Police par Département")),
+             div(style = "text-align: center;", 
+                 plotOutput("police_map")),
+             div(style = "text-align: center;", 
                  sliderInput("annee_effectifs", "Année pour les Effectifs de Police:", 
                              min = 2016, max = 2018, value = 2016, step = 1)),
              div(style = "text-align: center;", 
-                 h3("Délits par Département"),
+                 h3("Délits par Département")),
                  plotOutput("delits_map"),
                  sliderInput("annee_delits", "Année pour les Délits:", 
-                             # min max etc doivent correspondre aux valeurs dans colonne annee sinon pas de fusion
-                             min = 16, max = 18, value = 16, step = 1))),
-             
-     # Onglet Évolution des Effectifs
-     tabPanel("Évolution des Effectifs",
-             div(style = "text-align: center;", 
-                 h2("Évolution des Effectifs de Police dans un Département"),
-                 selectInput("departement", "Sélectionnez un département :", 
-                             choices = sprintf("%02d", 1:95), selected = "93"),
-                 plotOutput("evolution_graph")))
-             )
-    )
-  
-
+                             min = 2016, max = 2018, value = 2016, step = 1)),
     
+    # Onglet Évolution des Effectifs
+    tabPanel("Évolution des Effectifs",
+             h3("Évolution des Effectifs de Police dans un Département"),
+             selectInput("departement", "Choisir un département", 
+                         choices = unique(effectifs_par_dept_annee$Numero.Departement), selected = "93"),
+             plotOutput("evolution_graph")),
+    
+    # Onglet Délits et effectifs par Population
+    tabPanel("Délits et effectifs par Population",
+             sliderInput("annee_delits_population", "Année pour les Délits par Population:", 
+                         min = 2017, max = 2018, value = 2017, step = 1),
+             plotOutput("delits_population_graph"),
+             sliderInput("annee_effectifs_population", "Année pour les effectifs par Population:", 
+                         min = 2017, max = 2018, value = 2017, step = 1),
+             plotOutput("effectifs_population_graph")),
+    
+    # Onglet Effectifs vs Délits
+    tabPanel("Effectifs vs Délits",
+             sliderInput("annee_effectifs_vs_delits", "Année pour les Effectifs vs Délits:", 
+                         min = 2017, max = 2018, value = 2017, step = 1),
+             plotOutput("effectifs_vs_delits_graph"))
+  )
+)
