@@ -92,7 +92,7 @@ Pour ce faire, ouvrez ‘Git Bash’ (vous pouvez le chercher depuis la barre de
 
 
 ```
-git clone https://github.com/Guigoui/Projet_DSIA_40101A.git
+git clone https://github.com/Guigoui/Projet_DSIA_40101C.git
 ```
 
 
@@ -101,7 +101,7 @@ git clone https://github.com/Guigoui/Projet_DSIA_40101A.git
 Pour ce faire, ouvrez l’‘Invite de Commandes’ (vous pouvez la chercher depuis la barre de recherche Windows). À l’aide de la commande ‘cd’, rejoignez votre dossier qui correspond au dossier cloné de Git.
 
 ```
-cd path\to\your\Projet_DSIA_40101A
+cd path\to\your\Projet_DSIA_40101C
 ```
 
 
@@ -117,7 +117,7 @@ python -m pip install -r requirements.txt
 
 Après avoir suivi toutes les étapes précédentes, il vous suffit de rentrer la commande suivante :
 ```
-*python main.r*
+*Rscript app.r*
 ```
 
 Vous obtiendrez ensuite:
@@ -155,20 +155,18 @@ Notre code est structuré en plusieur fichiers :
 
 **src** : contient les scripts pour netoyer les données brutes.
 
-**main.py** : permet de lancer et visualiser le dashbaord .
+**R** : permet de lancer et visualiser le dashbaord .
+![image](https://github.com/user-attachments/assets/0316384b-7ecf-4995-b6c6-ee5fe598d9b0)
+
 
 
 
 ## Ajouter une page  
 
-Il vous suffit d'aller dans main.py et de rajouter le dcc.tab que vous voulez .
+Pour ajoutez un page il vous suffit d'ajoutez un tabpanel avec les elements que vous voulez.
 
-![image](https://github.com/user-attachments/assets/d1abecc1-ed66-4914-9955-eef14d998f63)
+![image](https://github.com/user-attachments/assets/f4176eeb-e4aa-48c2-b13c-660082af7487)
 
-
-Puis rajouter une condition d'apparition avec un elif 
-
-![image](https://github.com/user-attachments/assets/df585033-ee68-485d-8a77-c98321f3e0c4)
 
 
 ## Amélioration possible 
