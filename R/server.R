@@ -89,7 +89,7 @@ server <- function(input, output, session) {
       geom_point(aes(size = taille_cercle, color = CODGEO), alpha = 0.6) +
       scale_size_continuous(range = c(3, 30)) +
       labs(title = paste("Relation entre les Effectifs de Police et les Délits - Année", input$annee_effectifs_vs_delits),
-           x = "Effectifs de Police", y = "Délits", size = "Taille du Cercle") +
+           x = "Effectifs de Police", y = "Délits", size = "Proportion de la population par commune") +
       # ajoute titre de la légende pour les couleurs
       guides(color = guide_legend(title = "CODGEO")) +  
       theme_minimal() +

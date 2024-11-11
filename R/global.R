@@ -1,14 +1,16 @@
-# Charger les données
-effectifs_total <- read.csv('C:/Users/Guillaume/Desktop/Projet_DSIA_40101C/data/processed/effectifs_total.csv')
-effectifs_par_dept_annee <- read.csv('C:/Users/Guillaume/Desktop/Projet_DSIA_40101C/data/processed/effectifs_par_dept_annee.csv')
-effectifs_par_commune_annee_sorted<- read.csv('C:/Users/Guillaume/Desktop/Projet_DSIA_40101C/data/processed/effectifs_par_commune_annee_sorted.csv')
+library(here)
 
-delits_total <- read.csv('C:/Users/Guillaume/Desktop/Projet_DSIA_40101C/data/processed/delits_total.csv')
-delits_par_dept_annee <- read.csv('C:/Users/Guillaume/Desktop/Projet_DSIA_40101C/data/processed/delits_par_dept_annee.csv')
-delits_par_commune_annee <- read.csv('C:/Users/Guillaume/Desktop/Projet_DSIA_40101C/data/processed/delits_par_commune_annee.csv')
-delits_par_commune_annee_sorted <- read.csv('C:/Users/Guillaume/Desktop/Projet_DSIA_40101C/data/processed/delits_par_commune_annee_sorted.csv')
+# Charger les données depuis le chemin du projet (avec here)
+effectifs_total <- read.csv(here("data", "processed", "effectifs_total.csv"))
+effectifs_par_dept_annee <- read.csv(here("data", "processed", "effectifs_par_dept_annee.csv"))
+effectifs_par_commune_annee_sorted<- read.csv(here("data", "processed", "effectifs_par_commune_annee_sorted.csv"))
 
-merged_data <- read.csv('C:/Users/Guillaume/Desktop/Projet_DSIA_40101C/data/processed/merged_data.csv')
+delits_total <- read.csv(here("data", "processed", "delits_total.csv"))
+delits_par_dept_annee <- read.csv(here("data", "processed", "delits_par_dept_annee.csv"))
+delits_par_commune_annee <- read.csv(here("data", "processed", "delits_par_commune_annee.csv"))
+delits_par_commune_annee_sorted <- read.csv(here("data", "processed", "delits_par_commune_annee_sorted.csv"))
+
+merged_data <- read.csv(here("data", "processed", "merged_data.csv"))
 
 
 
